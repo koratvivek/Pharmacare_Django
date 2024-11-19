@@ -238,8 +238,6 @@ class CreateCheckoutSessionView(APIView):
                     payment_method_types=['card'],
                     line_items=line_items,
                     mode='payment',
-                    success_url="https://pharmacare-react.onrender.com/success",
-                    cancel_url="https://pharmacare-react.onrender.com/cancel",
                     customer_email=user.email,
                     shipping_address_collection={
                         'allowed_countries': ['IN'],
@@ -271,8 +269,8 @@ class CreateCheckoutSessionView(APIView):
                     payment_method_types=['card'],
                     line_items=line_items,
                     mode='payment',
-                    success_url="https://pharmacare-react.onrender.com/success",
-                    cancel_url="https://pharmacare-react.onrender.com/cancel",
+                    success_url="https://pharmacare-react.onrender.com/success/",
+                    cancel_url="https://pharmacare-react.onrender.com/cancel/",
                     customer_email=user.email,
                     shipping_address_collection={
                         'allowed_countries': ['IN'],
