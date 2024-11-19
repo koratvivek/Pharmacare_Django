@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from django.utils.dateparse import parse_date
-from .serializers import ProfileSerializer, CategorySerializer, ProductSerializer, DoctorSerializer, AppointmentSerializer, SpecializationSerializer, CartItemSerializer, CartSerializer, PurchaseSerializer, HealthcarePackageSerializer,ContactSerializer
+from .serializers import ProfileSerializer, CategorySerializer, ProductSerializer, DoctorSerializer, AppointmentSerializer, SpecializationSerializer, CartItemSerializer, CartSerializer, PurchaseSerializer, HealthcarePackageSerializer, ContactSerializer
 from .models import Product, Category, Appointment, Doctor, Specialization, CartItem, Cart, Purchase, HealthcarePackage
 from django.conf import settings
 import stripe
@@ -158,6 +158,7 @@ class AddToCartView(APIView):
         serializer = CartSerializer(cart)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class RemoveFromCartView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -283,8 +284,7 @@ class CreateCheckoutSessionView(APIView):
                     doctor = Doctor.objects.get(id=item['doctor_id'])
                     Purchase.objects.create(
                         user=user,
-                        product_name=f"Appointment with Dr. {
-                            doctor.name}",
+                        product_name=f"Appointment with Dr. {doctor.name}",
                         amount=doctor.fees,
                         purchase_type=purchase_type
                     )
@@ -332,7 +332,7 @@ class CreateCheckoutSessionView(APIView):
             return Response({'sessionId': session.id}, status=status.HTTP_200_OK)
 
         except Exception as e:
-          
+
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -420,21 +420,21 @@ def send_health_package_purchase_email(user, package_name, total_amount):
 class ContactUsView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def post(self,request):
-        serializer = ContactSerializer(data = request.data)
+    def post(self, request):
+        serializer = ContactSerializer(data=request.data)
         if serializer.is_valid():
             name = serializer.validated_data["name"]
             email = serializer.validated_data['email']
-            confirmation_email_html = render_to_string('contact.html', {'name': name})
+            confirmation_email_html = render_to_string(
+                'contact.html', {'name': name})
 
             send_mail(
-                subject = 'Confirmation: Your message has been received',
+                subject='Confirmation: Your message has been received',
                 message="",
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[email],
                 html_message=confirmation_email_html,
             )
             serializer.save()
-            return Response({"message":"Message Send SuccessFully"})
-        return Response({"error":"Message Not Send"})
-        
+            return Response({"message": "Message Send SuccessFully"})
+        return Response({"error": "Message Not Send"})
