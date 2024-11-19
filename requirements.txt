@@ -30,7 +30,7 @@ constantly==23.10.4
 cors==1.0.1
 cryptography==43.0.0
 cssselect==1.2.0
-debugpy==1.8.3
+debugpy==1.8.8
 decorator==5.1.1
 defusedxml==0.7.1
 Django==5.1
