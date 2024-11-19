@@ -152,6 +152,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
+    'https://pharmacare-react.onrender.com',
     'http://localhost:3000',
 ]
 
