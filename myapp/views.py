@@ -49,7 +49,6 @@ class ProductDetailView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, ItemID):
-        print(request.user)
         product = get_object_or_404(Product, ItemID=ItemID)
         serializer = ProductSerializer(product)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -75,9 +74,6 @@ class AvailableDoctorsView(APIView):
             specialization_ids = list(map(int, specialization_ids.split(',')))
 
         date = request.query_params.get('date')
-
-        print(f"Location: {location}, Specialization IDs: {
-              specialization_ids}, Date: {date}")
 
         # Validate date format
         if not date or not parse_date(date):
@@ -336,7 +332,7 @@ class CreateCheckoutSessionView(APIView):
             return Response({'sessionId': session.id}, status=status.HTTP_200_OK)
 
         except Exception as e:
-            print(f"Error: {str(e)}")
+          
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
