@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-1in$%p2y0yu1f9#2n^=k+^t-(=!68kp_zi9nxtz^vq65f1((yf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pharmacare-django.onrender.com']
 
 
 STRIPE_SECRET_KEY = 'sk_test_51Q27uLSCmOJFa9ssuuNO07qNn1yBoENKjBbYtausrhzrnqfyK6NVHydBYiOH273SEs33SlPaSg1OCvuHLXU8Uduf00WFHyuW2o'
