@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .body {
+            padding: 20px;
+        }
+        .body p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .fees {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Appointment Confirmed!</h1>
+        </div>
+        <div class="body">
+            <h2>Hi {{ user_name }},</h2>
+            <p>Your appointment with <strong>Dr. {{ doctor_name }}</strong> has been successfully confirmed.</p>
+            <p><strong>Date:</strong> {{ appointment_date }}</p>
+            <p class="fees">Fees: ₹{{ fees }}</p>
+            <p>We are looking forward to assisting you with your healthcare needs. Should you have any questions, feel free to reach out to us.</p>
+            <a href="#" class="button">View Appointment Details</a>
+        </div>
+        <div class="footer">
+            <p>Thank you for choosing Pharmacare!</p>
+            <p>Regards,<br>Pharmacare Team</p>
+        </div>
+    </div>
+</body>
+</html>

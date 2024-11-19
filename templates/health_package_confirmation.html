@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Care Package Purchase Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .body {
+            padding: 20px;
+        }
+        .body h2 {
+            color: #007bff;
+        }
+        .body p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .amount {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Purchase Confirmed!</h1>
+        </div>
+        <div class="body">
+            <h2>Thank you for purchasing the {{ package_name }} package, {{ user_name }}!</h2>
+            <p>You have successfully subscribed to our health care package.</p>
+            <p class="amount">Total Amount: ₹{{ total_amount }}</p>
+            <p>We are committed to providing you with the best healthcare services and ensuring your well-being is our priority.</p>
+            <a href="#" class="button">View Package Details</a>
+        </div>
+        <div class="footer">
+            <p>Thank you for choosing Pharmacare!</p>
+            <p>Regards,<br>Pharmacare Team</p>
+        </div>
+    </div>
+</body>
+</html>
