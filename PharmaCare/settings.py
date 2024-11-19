@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-1in$%p2y0yu1f9#2n^=k+^t-(=!68kp_zi9nxtz^vq65f1((yf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_SECRET_KEY = 'sk_test_51Q27uLSCmOJFa9ssuuNO07qNn1yBoENKjBbYtausrhzrnqfyK6NVHydBYiOH273SEs33SlPaSg1OCvuHLXU8Uduf00WFHyuW2o'
 
 STRIPE_PUBLISHABLE_KEY = 'P:pk_test_51Q27uLSCmOJFa9ssaPk3olhoVC62aiKqCFm4hlqeMV51Oo30p9P8R5Qzftl0Q2HsPsMGmf2ISod28txwV3u5PFcB00htJkKGza'
 
@@ -160,8 +160,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'pharmacare.careteam@gmail.com'
+EMAIL_HOST_PASSWORD = 'itzr nqyf pqey kras'
 
 context = ssl._create_unverified_context()
 
